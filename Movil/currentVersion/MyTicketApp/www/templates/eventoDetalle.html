@@ -1,0 +1,45 @@
+<!--<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding">
+    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    <p>
+      {{eventoDetalle.nombreEvento}}
+    </p>
+  </ion-content>
+</ion-view>-->
+
+<ion-view view-title="{{eventoDetalle.nombreEvento}}">   
+      <ion-content>
+         <div class="item item-image">
+            <img ng-src="http://i.imgur.com/sKF2wWI.jpg" width="200px" />
+          </div>
+
+          <div class="item item-avatar">
+            <img src="http://files.softicons.com/download/object-icons/movies-icons-by-pinchodesigns/png/32x32/Movie.png">
+            <h2>{{eventoDetalle.nombreEvento}}</h2>
+            <p>{{eventoDetalle.descripcionEvento}}</p>
+            <p>{{eventoDetalle.fechaEvento}}</p>
+        	<p>{{eventoDetalle.ciudadEvento}}</p>
+        	<p>{{eventoDetalle.escenarioEvento}}</p>
+          </div>
+        
+          <ion-list>
+          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="localidad in 
+          localidades" type="item-text-wrap" href="#/app/eventos/{{localidad.idLocalidadEvento}}">
+            <h2>{{localidad.descripcion}}</h2>
+            <p>{{localidad.valorPesos}}</p>
+             <p>Aforo :{{localidad.totalDisponible}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+            <ion-option-button class="button-assertive" ng-click="comprarLocalidad(eventoDetalle,localidad)">
+              Comprar
+            </ion-option-button>
+
+          </ion-item>
+        </ion-list>
+
+  
+          <a class="item" href="#">
+              Average Vote: <strong>{{movie.vote_average}}</strong> (Votes: {{movie.vote_count}})
+            </a>
+      </ion-content>
+ </ion-view> 
+

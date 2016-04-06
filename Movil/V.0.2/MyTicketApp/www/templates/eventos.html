@@ -1,0 +1,19 @@
+
+<ion-view view-title="Eventos">
+<ion-nav-buttons side="right">
+  <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+</ion-nav-buttons>
+  <ion-content ng-controller="eventosControl">
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="evento in eventos" type="item-text-wrap" href="#/app/eventos/{{evento.idEvento}}">
+        <img ng-src="{{evento.face}}">
+        <h2>{{evento.nombreEvento}}</h2>
+        <p>{{evento.descripcionEvento}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(evento)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>

@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/joanrincon/Documents/ProyectoDeGrado/Movil/V.0.2/MyTicketApp/www/js/test.js",
+        "/Users/joanrincon/Documents/ProyectoDeGrado/Movil/V.0.2/MyTicketApp/www/js/controllers.js",
+        "/Users/joanrincon/Documents/ProyectoDeGrado/Movil/V.0.2/MyTicketApp/www/js/utilidades/webService.js"
+    ]
+}
