@@ -1,20 +1,13 @@
-<!--<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{eventoDetalle.nombreEvento}}
-    </p>
-  </ion-content>
-</ion-view>-->
+
 
 <ion-view view-title="{{eventoDetalle.nombreEvento}}">   
       <ion-content>
          <div class="item item-image">
-            <img ng-src="http://i.imgur.com/sKF2wWI.jpg" width="200px" />
+            <img ng-src="{{eventoDetalle.urlImagen}}" width="200px" />
           </div>
 
           <div class="item item-avatar">
-            <img src="http://files.softicons.com/download/object-icons/movies-icons-by-pinchodesigns/png/32x32/Movie.png">
+            <img ng-src="{{eventoDetalle.ulrIcono}}">
             <h2>{{eventoDetalle.nombreEvento}}</h2>
             <p>{{eventoDetalle.descripcionEvento}}</p>
             <p>{{eventoDetalle.fechaEvento}}</p>
@@ -36,10 +29,6 @@
           </ion-item>
         </ion-list>
 
-  
-          <a class="item" href="#">
-              Average Vote: <strong>{{movie.vote_average}}</strong> (Votes: {{movie.vote_count}})
-            </a>
       </ion-content>
  </ion-view> 
 

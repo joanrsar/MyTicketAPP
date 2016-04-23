@@ -13,7 +13,7 @@ import javax.ws.rs.core.Application;
  *
  * @author joanrincon
  */
-@javax.ws.rs.ApplicationPath("webresources")
+@javax.ws.rs.ApplicationPath("res")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -30,8 +30,8 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(com.co.myticket.servicios.TiqueteResource.class);
         resources.add(com.co.myticket.servicios.WsTiqueteResource.class);
-        resources.add(com.co.myticket.servicios.WsTiquetesResource.class);
     }
     
 }

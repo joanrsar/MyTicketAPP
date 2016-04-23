@@ -73,6 +73,10 @@ public class Consultas {
                     evento.setUsuarioCreacion(lResultado.getString("USUARIO_CREACION"));
                     evento.setUsuarioUltimaModificacion(lResultado.getString("USUARIO_ULTIMA_MODIFICACION"));
                     evento.setFechaUltimaModificacion(lResultado.getDate("FECHA_ULTIMA_MODIFICACION"));
+                    evento.setUlrIcono(lResultado.getString("URL_ICONO"));
+                    evento.setUrlImagen(lResultado.getString("URL_IMAGEN"));
+                    evento.setCoordenadaUno(lResultado.getString("COORDENADA_UNO"));
+                    evento.setCoordenadaDos(lResultado.getString("COORDENADA_DOS"));
                     
                     lEvento.add(evento);
                     

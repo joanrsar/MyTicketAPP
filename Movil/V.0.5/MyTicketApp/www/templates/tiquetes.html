@@ -1,0 +1,17 @@
+
+<ion-view view-title="Tiquetes">
+<ion-nav-buttons side="right">
+  <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+</ion-nav-buttons>
+  <ion-content ng-controller="tiquetesControl">
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="tiquete in tiquetes" type="item-text-wrap" href="#/app/tiquete/{{tiquete.idTiquete}}">
+        <img ng-src="{{evento.face}}">
+        <h2>{{tiquete.nombreEvento}}</h2>
+        <h2>{{tiquete.nombreLocalidad}}</h2>
+        <p>{{tiquete.fechaEvento}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>

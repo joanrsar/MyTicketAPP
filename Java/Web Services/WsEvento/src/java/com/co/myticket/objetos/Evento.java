@@ -29,14 +29,18 @@ public class Evento {
     private String direccionOrganizacion;
     private String tipoEvento;
     private String estadoEvento;
-    private String   fechaEvento;
-    private String   horaInicio;
-    private String   horaFin;
+    private String fechaEvento;
+    private String horaInicio;
+    private String horaFin;
     private String disponibilidad;
     private Date   fechaCreacion;
     private String usuarioCreacion;
     private Date   fechaUltimaModificacion;
     private String usuarioUltimaModificacion;
+    private String ulrIcono;
+    private String urlImagen;
+    private String coordenadaUno;
+    private String coordenadaDos;
 
     public int getIdEvento() {
         return idEvento;
@@ -207,6 +211,39 @@ public class Evento {
     public void setUsuarioUltimaModificacion(String usuarioUltimaModificacion) {
         this.usuarioUltimaModificacion = usuarioUltimaModificacion;
     }
+
+    public String getUlrIcono() {
+        return ulrIcono;
+    }
+
+    public void setUlrIcono(String ulrIcono) {
+        this.ulrIcono = ulrIcono;
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+
+    public String getCoordenadaUno() {
+        return coordenadaUno;
+    }
+
+    public void setCoordenadaUno(String coordenadaUno) {
+        this.coordenadaUno = coordenadaUno;
+    }
+
+    public String getCoordenadaDos() {
+        return coordenadaDos;
+    }
+
+    public void setCoordenadaDos(String coordenadaDos) {
+        this.coordenadaDos = coordenadaDos;
+    }
+    
     
     
     

@@ -1,60 +1,43 @@
-<!--<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{eventoDetalle.nombreEvento}}
-    </p>
-  </ion-content>
-</ion-view>-->
 
 <ion-view view-title="Compra">   
-      <ion-content>
-         
-          <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
-          <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
-          <input name="merchantId" type="hidden" value="561096"/>
-          <input name="accountId" type="hidden" value="563600"/>
-          <input name="description" type="hidden" value="Venta de Tickets de eventos"/>
-          <input name="referenceCode" type="hidden" value="001"/>
-          <input name="amount" type="hidden" value="10500"/>
-          <input name="tax" type="hidden" value="500"/>
-          <input name="taxReturnBase" type="hidden" value="10000"/>
-          <input name="currency" type="hidden" value="COP"/>
-          <input name="lng" type="hidden" value="es"/>
-          <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
-          <input name="buttonType" value="SIMPLE" type="hidden"/>
-          <input name="signature" value="26e6af3042267a608a871642830889c84fc7fad062a512ab3f82a004f1eed1c8" type="hidden"/>
-        </form>
-         <!-- <input id="text" type="text"    value="holabb" style="width:80%" /><br />
-         <center><div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div></center>-->
-       
-          <!--<div class="item item-avatar">
-            <img src="http://files.softicons.com/download/object-icons/movies-icons-by-pinchodesigns/png/32x32/Movie.png">
-            <h2>{{eventoDetalle.nombreEvento}}</h2>
-            <p>{{eventoDetalle.descripcionEvento}}</p>
-            <p>{{eventoDetalle.fechaEvento}}</p>
-        	<p>{{eventoDetalle.ciudadEvento}}</p>
-        	<p>{{eventoDetalle.escenarioEvento}}</p>
-          </div>
-        
-          <ion-list>
-          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="localidad in 
-          localidades" type="item-text-wrap" href="#/app/eventos/{{localidad.idLocalidadEvento}}">
-            <h2>{{localidad.descripcion}}</h2>
-            <p>{{localidad.valorPesos}}</p>
-             <p>Aforo :{{localidad.totalDisponible}}</p>
-            <i class="icon ion-chevron-right icon-accessory"></i>
-            <ion-option-button class="button-assertive" ng-click="comprarLocalidad(eventoDetalle,localidad)">
-              Comprar
-            </ion-option-button>
-
-          </ion-item>
-        </ion-list>
-
+   
   
-          <a class="item" href="#">
-              Average Vote: <strong>{{movie.vote_average}}</strong> (Votes: {{movie.vote_count}})
-            </a>-->
-      </ion-content>
+ <ion-content >
+  <form name="myForm"  method="post" ng-submit="irAPago()" accept-charset="UTF-8">      
+        <div class="list">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" >
+            <img ng-src="{{evento.ulrIcono}}">
+            <center><h2><strong>Evento</strong> :{{evento.nombreEvento}}</h3>
+            <center><h2><strong>Localidad </strong>: {{localidad.nombreLocalidad}}</h3>
+            <center><h2><strong>Valor </strong>: ${{localidad.valorPesos}}</h3>
+            <center><h2></h2></center>
+            <br><br><br>
+          </ion-item>
+            <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Cantidad
+               </div>
+               <select  ng-model="compraData.boletas" ng-change="cambiarValor()" ng-model="select">
+                  <option value="1" selected>1</option>
+                  <option  value="2">2</option>
+                  <option  value="3">3</option>
+                  <option  value="4">4</option>
+                  <option  value="5">5</option>
+                 <option  value="6">6</option>
+               </select>
+            </label>
+        </div>
+         <a class="item" href="#">
+              <strong>Valor Total</strong> : {{totalPago}} 
+        </a>
+    </form>
+</ion-content>
+    <ion-footer-bar class="bar-positive tabs">
+      <a class="tab-item">
+          <button class="button button-block button-positive" type="button" ng-click="irAPago()">Siguiente</button>
+      </a>
+    </ion-footer-bar>
+
+
  </ion-view> 
 

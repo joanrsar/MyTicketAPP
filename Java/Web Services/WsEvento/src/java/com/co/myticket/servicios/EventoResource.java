@@ -7,7 +7,6 @@
 package com.co.myticket.servicios;
 
 import com.co.myticket.conexion.Consultas;
-import com.co.myticket.log.RegistrarLog;
 import com.co.myticket.objetos.Evento;
 import com.co.myticket.objetos.LocalidadEvento;
 import java.util.ArrayList;
@@ -32,7 +31,6 @@ public class EventoResource {
 
     @Context
     private UriInfo context;
-    private RegistrarLog log;
     private String CAPA = "JAVA";
     /**
      * Creates a new instance of WsEventoesResource

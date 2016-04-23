@@ -5,4 +5,7 @@
     <debug>true</debug>
   </jsp-descriptor>
   <context-root>/WsTiquete</context-root>
+  <library-ref>
+	<library-name>BdConexion</library-name>
+  </library-ref>
 </weblogic-web-app>

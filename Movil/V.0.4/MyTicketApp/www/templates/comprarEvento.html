@@ -1,0 +1,43 @@
+
+<ion-view view-title="Compra">   
+   
+  
+ <ion-content >
+  <form name="myForm"  method="post" ng-submit="irAPago()" accept-charset="UTF-8">      
+        <div class="list">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" >
+            <img ng-src="{{localidad.face}}">
+            <center><h2><strong>Evento</strong> :{{evento.nombreEvento}}</h3>
+            <center><h2><strong>Localidad </strong>: {{localidad.nombreLocalidad}}</h3>
+            <center><h2><strong>Valor </strong>: ${{localidad.valorPesos}}</h3>
+            <center><h2></h2></center>
+            <br><br><br>
+          </ion-item>
+            <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Cantidad
+               </div>
+               <select  ng-model="compraData.boletas" ng-change="cambiarValor()" ng-model="select">
+                  <option value="1" selected>1</option>
+                  <option  value="2">2</option>
+                  <option  value="3">3</option>
+                  <option  value="4">4</option>
+                  <option  value="5">5</option>
+                 <option  value="6">6</option>
+               </select>
+            </label>
+        </div>
+         <a class="item" href="#">
+              <strong>Valor Total</strong> : {{totalPago}} 
+        </a>
+    </form>
+</ion-content>
+    <ion-footer-bar class="bar-positive tabs">
+      <a class="tab-item">
+          <button class="button button-block button-positive" type="button" ng-click="irAPago()">Siguiente</button>
+      </a>
+    </ion-footer-bar>
+
+
+ </ion-view> 
+

@@ -2,10 +2,22 @@ angular.module('starter.eventosControl', [])
 
 .controller('eventosControl', function($scope,$http,
                                         eventosFactoria,
-                                        sesionServicio
+                                        sesionServicio,
+                                        $ionicLoading
                                       ) {
+    
+ $scope.cargando = function() {
+  $ionicLoading.show({
+      template: 'Cargando...'
+    });
+  };
+  $scope.hide = function(){
+    $ionicLoading.hide();
+  };
+
  $scope.eventos;
  var usuario = sesionServicio.usuario();
+ $scope.cargando();
  consultarEventos($http,$scope,usuario);
 
 
@@ -15,11 +27,25 @@ angular.module('starter.eventosControl', [])
   	 {
   	 	eventosFactoria.cargar(response);
   	 	$scope.eventos = eventosFactoria.all();
+        $scope.hide();
   	 }
   	 catch(e){
   	 	console.log(e);
   	 }
- };
+     finally{
+        $scope.$broadcast('scroll.refreshComplete');
+     }
+ }
+
+ $scope.doRefresh = function() {
+  try{
+        consultarEventos($http,$scope,usuario);
+  }
+  catch(e){
+    console.log(e);
+    }
+  };
+
 
 })
 
