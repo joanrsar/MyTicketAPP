@@ -67,6 +67,14 @@ angular.module('starter')
     }
   }
 
+  var setUser = function(user_data) {
+    window.localStorage.starter_facebook_user = JSON.stringify(user_data);
+  };
+
+  var getUser = function(){
+    return JSON.parse(window.localStorage.starter_facebook_user || '{}');
+  };
+
   return{
     login : login,
     logout : logout,
@@ -80,7 +88,10 @@ angular.module('starter')
      } ,
     isaAutorizado : function(){return isAutenticado;},
     usuario : function(){return usuario;},
-    role : function(){ return perfil;}
+    role : function(){ return perfil;},
+    getUser: getUser,
+    setUser: setUser
+
   };
 })
 

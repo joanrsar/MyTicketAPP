@@ -79,4 +79,8 @@ angular.module('starter')
 		document.getElementById("loginDiv").className = "";
   		document.getElementById("logeadoDiv").className = "ng-hide";
 	}
+
+
+
+
 });
