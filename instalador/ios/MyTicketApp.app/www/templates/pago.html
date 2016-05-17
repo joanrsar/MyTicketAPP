@@ -1,0 +1,43 @@
+
+<ion-view view-title="Pago">   
+   
+         
+ <ion-content >
+    <form name="myForm"  method="post"  accept-charset="UTF-8">
+        <div class="list">
+             <h3><strong>Evento</strong> :{{evento.nombreEvento}}</h3>
+             <h3><strong>Localidad </strong>: {{localidad.nombreLocalidad}}</h3> 
+             <h3><strong>Escenario</strong> :{{evento.nombreEscenario}}</h3>
+             <h3><strong>Fecha </strong>: {{evento.fechaEvento}}</h3> 
+             <h3><strong>Cantidad </strong>: {{boletas}}</h3> 
+        </div>
+        <label class="item item-input">
+          <span class="input-label">Tarjeta</span>
+          <input type="number" ng-model="dataPago.tarjeta">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Codigo de Verificación</span>
+          <input type="number"  ng-model="dataPago.codigo" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">fecha vencimiento</span>
+          <input type="date" ng-model="dataPago.fechaVencimiento">
+        </label>
+        <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Tipo
+               </div>
+               <select  ng-model="dataPago.empresa"  ng-model="select">
+                  <option value="VISA" selected>VISA</option>
+                  <option  value="MASTER">MASTER</option>
+               </select>
+     </label>
+    </form>
+</ion-content>
+<ion-footer-bar class="bar-positive tabs">
+      <a class="tab-item">
+          <button class="button button-block button-positive" type="button" ng-click="realizarPago()">Realizar Pago</button>
+      </a>
+</ion-footer-bar>
+ </ion-view> 
+

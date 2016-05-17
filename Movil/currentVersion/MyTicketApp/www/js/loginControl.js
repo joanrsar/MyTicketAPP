@@ -80,6 +80,20 @@ angular.module('starter')
   		document.getElementById("logeadoDiv").className = "ng-hide";
 	}
 
+	 $scope.login = function ()
+	{
+		facebookLogin(window.cordovaOauth, window.http);
+	}
+
+	function facebookLogin($cordovaOauth, $http)
+	{
+	  $cordovaOauth.facebook("APP ID", ["email", "public_profile"], {redirect_uri: "http://localhost/callback"}).then(function(result){
+	   displayData($http, result.access_token);
+				},  function(error){
+						alert("Error: " + error);
+				});
+			}
+
 
 
 
